@@ -15,6 +15,8 @@ import React from 'react'
   * componentWillReceiveProps -> shouldComponentUpdate -> componentWillUpdate -> render
   * 如果是第二种情况，生命周期执行顺序为：
   * shouldComponentUpdate -> componentWillUpdate -> render
+  * 总结：
+  * 值得注意一点componentWillReceiveProps生命周期函数只有父组件有更新哪怕没有传递给子组件的props也会触发子组件的该生命周期函数
   */
 class LifeCycle extends React.Component{
   constructor(props) {
@@ -73,9 +75,15 @@ export default class LifeCycleContainer extends React.Component{
       hideChild: true
     })
   }
+  changeOwnText = ()=> {
+    this.setState({
+      ownText: "修改后的父组件自身文本"
+    })
+  }
   render() {
     return (
       <div className="father-container">
+        <button className="change-text" onClick={this.changeOwnText}>修改父组件自身文本内容</button>
         <button onClick={this.changeText} className="change-text">修改父组件文本内容</button>
         <button onClick={this.hideChild} className="hide-child">隐藏子组件</button>
         {this.state.hideChild ? null : <LifeCycle text={this.state.text}/>}
