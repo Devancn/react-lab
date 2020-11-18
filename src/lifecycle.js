@@ -24,6 +24,15 @@ import React from 'react'
    * React组件会根据该函数的返回值来决定是否执行之后的生命周期，
    * 所以返回false的情况下render函数不会被执行，可以用来做一些性能优化
    */
+
+
+   /**
+    * Unmounting 阶段: 组件卸载
+    * 组件卸载时机有两个：
+    * 1. 组件在父组件中被移除了
+    * 2. 本次render时发现与上次的render的key属性的值不同或者type不同
+    * 涉及到的生命周期函数只有componentWillUnmount
+    */
 class LifeCycle extends React.Component{
   constructor(props) {
     console.log("进入constructor");
