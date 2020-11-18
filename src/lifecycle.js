@@ -18,6 +18,12 @@ import React from 'react'
   * 总结：
   * 值得注意一点componentWillReceiveProps生命周期函数只有父组件有更新哪怕没有传递给子组件的props也会触发子组件的该生命周期函数
   */
+
+  /**
+   * shouldComponentUpdate生命周期函数补充：
+   * React组件会根据该函数的返回值来决定是否执行之后的生命周期，
+   * 所以返回false的情况下render函数不会被执行，可以用来做一些性能优化
+   */
 class LifeCycle extends React.Component{
   constructor(props) {
     console.log("进入constructor");
