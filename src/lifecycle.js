@@ -1,7 +1,21 @@
 import React from 'react'
 
-// Mounting阶段： 组件的初始化渲染（挂载）
-// constructor -> componentWillMount -> render -> componentDidMount
+/**
+ * Mounting阶段： 组件的初始化渲染（挂载）
+ * 挂载过程在组件的一生中只会发生一次，在这个过程中组件被初始化然后被渲染成真实DOM，完成首次渲染
+ * constructor -> componentWillMount -> render -> componentDidMount
+ */
+
+ /**
+  * Updating阶段：组件的更新
+  * 组件的更新分为两种：
+  * 1. 由父组件更新触发
+  * 2. 组件自身调用自己的setState触发
+  * 如果是第一种情况，生命周期执行顺序为：
+  * componentWillReceiveProps -> shouldComponentUpdate -> componentWillUpdate -> render
+  * 如果是第二种情况，生命周期执行顺序为：
+  * shouldComponentUpdate -> componentWillUpdate -> render
+  */
 class LifeCycle extends React.Component{
   constructor(props) {
     console.log("进入constructor");
