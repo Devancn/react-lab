@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Lifecycle from './lifecycle'
 
 ReactDOM.render(
-    <div>hey!</div>,
+    <Lifecycle><div>123</div></Lifecycle>,
   document.getElementById('root')
 );
