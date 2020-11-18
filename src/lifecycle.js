@@ -1,6 +1,6 @@
 import React from 'react'
 
-// 初始时生命周期执行顺序
+// Mounting阶段： 组件的初始化渲染（挂载）
 // constructor -> componentWillMount -> render -> componentDidMount
 class LifeCycle extends React.Component{
   constructor(props) {
