@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Lifecycle from './lifecycle'
+import LifeCycleContainer from './lifecycle16'
 
 ReactDOM.render(
-    <Lifecycle><div>123</div></Lifecycle>,
+    <LifeCycleContainer />,
   document.getElementById('root')
 );
