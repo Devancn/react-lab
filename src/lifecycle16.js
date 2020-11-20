@@ -1,5 +1,18 @@
 import React from "react";
 
+/**
+ * 挂载阶段生命周期函数执行顺序
+ * constructor -> getDerivedStateFromProps -> render -> componentDidMount
+ */
+
+ /**
+  * 更新阶段生命周期函数执行顺序
+  * getDerivedStateFromProps -> shouldComponentUpdate -> render -> getSnapshotBeforeUpdate -> componentDidUpdate
+  */
+
+  /**
+   * 卸载阶段生命周期函数执行顺序 componentWillUnmount
+   */
 class LifeCycle extends React.Component {
   // 初始化调用
   constructor(props) {
@@ -7,7 +20,7 @@ class LifeCycle extends React.Component {
     super(props);
     this.state = { text: "子组件的文本" };
   }
-  // 初始化/更新时调用
+  // 初始化/更新时调用(16.3之前只有父组件更新才会执行该函数)
   static getDerivedStateFromProps(props, state) {
     console.log(arguments, "getDerivedStateFromProps方法执行");
     return {
